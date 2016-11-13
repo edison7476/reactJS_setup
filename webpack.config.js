@@ -11,9 +11,10 @@ module.exports = {
         {
           test: /.jsx?$/,
           loader: 'babel-loader',
-          exclude: /node_modules'/,
+          exclude: /(node_modules|bower_components)/,
           query:{
-            presets:['es2015', 'react']
+            presets:['es2015', 'stage-0','react'],
+            plugins:['react-html-attrs', 'transform-class-properties', 'transform-decorators-legacy']
           }
         }
       ]
